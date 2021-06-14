@@ -25,7 +25,7 @@ app.use(express.urlencoded({extended:false}));
 app.set('view engine','ejs')
 
 app.get('/',(req,res)=>{
-    res.render('index',{loggedin:false})
+    res.render('index',{loggedin:false,name:""})
 })
 
 app.get('/register-owner',(req,res)=>{
@@ -109,7 +109,9 @@ app.post('/login-owner',async (req,res)=>{
         console.log(isMatch);
         if(isMatch)
         {
-            res.status(200).render('index',{loggedin:true});
+            let uname=loginData.fname;
+            uname=uname.charAt(0).toUpperCase() + uname.slice(1);
+            res.status(200).render('index',{loggedin:true,name:uname});
         }
         else{
             // Swal('Oops! Incorrect credentials');
@@ -144,8 +146,10 @@ app.post('/login-consumer',async (req,res)=>{
         console.log(isMatch);
         if(isMatch)
         {
+            let uname=loginData.fname;
+            uname=uname.charAt(0).toUpperCase() + uname.slice(1);
             //Swal('Login successful');
-            res.status(200).redirect('/');
+            res.status(200).render('index',{loggedin:true,name:uname});
         }
         else{
             //res.json({message:"Incorrect credentials"});
@@ -169,7 +173,7 @@ app.get("/logout",(req,res)=>{
         
         //console.log("Logout successful");
         //await req.user.save();
-        res.render('index',{loggedin:false});
+        res.render('index',{loggedin:false,name:""});
     }
     catch(err)
     {

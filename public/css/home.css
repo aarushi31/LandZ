@@ -27,7 +27,7 @@ header{
     font-size: 110%;
 }
 .active-links{
-    /* margin-left: 70%; */
+    margin-left: 68%; 
 }
 
 .nav-item a:hover{
@@ -36,6 +36,15 @@ header{
     font-family: 'Blinker', sans-serif;
 }
 /* navbar styling ends */
+
+.welcome{
+    color:#fff;
+    position: absolute;
+    top: 28%;
+    right: 45%;
+    width: 135px;
+
+}
 
 .searchbar{
     margin: 15% 20%;

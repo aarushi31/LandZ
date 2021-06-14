@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/home.css">
-    <link  href="/css/LOginprocss.css" rel="stylesheet">
+    <!-- <link  href="../css/LOginprocss.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/LoginUser.css">
 </head>
 <body>
   
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="container-fluid">
-        <a class="navbar-brand" href="LOginpro.html">
-        <img src="../images/113-1139281_ive-hill-eagles-blue-eagle-transparent-logo.png" width="40" height="30" class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="/register-owner">
+        <img src="/images/113-1139281_ive-hill-eagles-blue-eagle-transparent-logo.png" width="40" height="30" class="d-inline-block align-top" alt="">
           Know Yo Land</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,12 +40,19 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main id="border">
   <div class="container ">
-    <div class="col-md-6 offset-md-3">
+    <div class="split left">
+      <div class="centered">
+        <img src="/images/left-image.jpg" class="image" id="imgg" alt="an image">
+      </div>
+    </div>
+    <div class="split right">
+      <div class="centered">
+    <div class="col-md-6">
 
           <div class="form-group">  
-            
+            <div class="border-box">
               <form class="row g-2" method="POST" action="/register-consumer">
                 <div class="form-head"> 
                   <% if(error){ %>
@@ -85,8 +93,11 @@
                 </div>
                 <div class="vert-line"></div>
         </form>
+        </div>
         
       
+    </div>
+    </div>
     </div>
     </div>
   </div>
